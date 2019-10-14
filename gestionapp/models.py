@@ -13,7 +13,7 @@ class Subscriber(models.Model):
     class Meta:
         verbose_name_plural = 'subscribers'
 
-    def __unicode__(self):
+    def __str__(self):
         return u"%s's Subscription Info" % self.user_rec
 
 class Person(models.Model):
