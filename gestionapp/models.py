@@ -16,7 +16,7 @@ class Subscriber(models.Model):
     def __unicode__(self):
         return u"%s's Subscription Info" % self.user_rec
 
-class Author(models.Model):
+class Person(models.Model):
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=40)
     email = models.EmailField()
