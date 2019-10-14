@@ -23,3 +23,22 @@ class Person(models.Model):
 
     def __unicode__(self):
         return u'%s %s' % (self.first_name, self.last_name)
+
+class Publication(models.Model):
+    title = models.CharField(max_length=30)
+
+    class Meta:
+        ordering = ('title',)
+
+    def __str__(self):
+        return self.title
+
+class Article(models.Model):
+    headline = models.CharField(max_length=100)
+    publications = models.ManyToManyField(Publication, related_name="articles")
+
+    class Meta:
+        ordering = ('headline',)
+
+    def __str__(self):
+        return self.headline
